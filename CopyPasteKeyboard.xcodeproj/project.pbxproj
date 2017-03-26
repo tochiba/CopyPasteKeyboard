@@ -16,6 +16,9 @@
 		DB42A6EF1E87DBB400BF32D8 /* CopyPasteKeyboardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB42A6EE1E87DBB400BF32D8 /* CopyPasteKeyboardUITests.swift */; };
 		DB42A6FF1E87E12500BF32D8 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB42A6FD1E87E12500BF32D8 /* Realm.framework */; };
 		DB42A7001E87E12500BF32D8 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB42A6FE1E87E12500BF32D8 /* RealmSwift.framework */; };
+		DB42A7031E87F20F00BF32D8 /* PasteboardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB42A7021E87F20F00BF32D8 /* PasteboardService.swift */; };
+		DB42A7051E87F9FA00BF32D8 /* PasteboardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB42A7041E87F9F900BF32D8 /* PasteboardModel.swift */; };
+		DB42A7071E87FB2500BF32D8 /* Pasteboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB42A7061E87FB2500BF32D8 /* Pasteboard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,9 @@
 		DB42A6F01E87DBB400BF32D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB42A6FD1E87E12500BF32D8 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		DB42A6FE1E87E12500BF32D8 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		DB42A7021E87F20F00BF32D8 /* PasteboardService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasteboardService.swift; sourceTree = "<group>"; };
+		DB42A7041E87F9F900BF32D8 /* PasteboardModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasteboardModel.swift; sourceTree = "<group>"; };
+		DB42A7061E87FB2500BF32D8 /* Pasteboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pasteboard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +116,9 @@
 				DB42A6D51E87DBB400BF32D8 /* Assets.xcassets */,
 				DB42A6D71E87DBB400BF32D8 /* LaunchScreen.storyboard */,
 				DB42A6DA1E87DBB400BF32D8 /* Info.plist */,
+				DB42A7021E87F20F00BF32D8 /* PasteboardService.swift */,
+				DB42A7041E87F9F900BF32D8 /* PasteboardModel.swift */,
+				DB42A7061E87FB2500BF32D8 /* Pasteboard.swift */,
 			);
 			path = CopyPasteKeyboard;
 			sourceTree = "<group>";
@@ -297,7 +306,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB42A7031E87F20F00BF32D8 /* PasteboardService.swift in Sources */,
 				DB42A6D11E87DBB400BF32D8 /* ViewController.swift in Sources */,
+				DB42A7071E87FB2500BF32D8 /* Pasteboard.swift in Sources */,
+				DB42A7051E87F9FA00BF32D8 /* PasteboardModel.swift in Sources */,
 				DB42A6CF1E87DBB400BF32D8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
