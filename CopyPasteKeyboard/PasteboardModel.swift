@@ -19,7 +19,7 @@ final class PasteboardModel {
         return loadResults(type: type).map { $0.toStruct() }
     }
 
-    func insertPasteboard(pasteboard: Pasteboard) {
+    func insertPasteboard(_ pasteboard: Pasteboard) {
         delete(id: pasteboard.id)
         do {
             let object = PasteboardEntity(pasteboard: pasteboard)
@@ -30,7 +30,7 @@ final class PasteboardModel {
         } catch _ as NSError {}
     }
 
-    func deletePasteboard(pasteboard: Pasteboard) {
+    func deletePasteboard(_ pasteboard: Pasteboard) {
         delete(id: pasteboard.id)
     }
     
