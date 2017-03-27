@@ -18,6 +18,7 @@ final class PasteboardService {
         NotificationCenter.default.removeObserver(self)
     }
     
+    // TODO: ハンドリング
     dynamic private func updatePasteboard() {
         print(UIPasteboard.general.strings ?? "")
     }
