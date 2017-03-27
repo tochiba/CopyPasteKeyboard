@@ -14,6 +14,7 @@ enum GenreType: Int {
 }
 
 final class PasteboardEntity: Object {
+    dynamic var id = ""
     dynamic var text = ""
     dynamic var url = ""
     dynamic var image = UIImage()
@@ -21,6 +22,7 @@ final class PasteboardEntity: Object {
     
     convenience init(pasteboard: Pasteboard) {
         self.init()
+        id = pasteboard.id
         text = pasteboard.text
         url = pasteboard.url
         image = pasteboard.image
@@ -29,6 +31,7 @@ final class PasteboardEntity: Object {
     
     func toStruct() -> Pasteboard {
         var pasteboard = Pasteboard()
+        pasteboard.id = id
         pasteboard.text = text
         pasteboard.url = url
         pasteboard.image = image
@@ -38,6 +41,7 @@ final class PasteboardEntity: Object {
 }
 
 struct Pasteboard {
+    var id = UUID().uuidString
     var text = ""
     var url = ""
     var image = UIImage()

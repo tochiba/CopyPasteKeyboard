@@ -7,8 +7,50 @@
 //
 
 import Foundation
+import RealmSwift
 
 final class PasteboardModel {
-    func insertPasteboard() {
+    
+    func loadAllPasteboard() -> [Pasteboard] {
+        return loadAllResults().map { $0.toStruct() }
+    }
+
+    func loadPasteboard(type: GenreType) -> [Pasteboard] {
+        return loadResults(type: type).map { $0.toStruct() }
+    }
+
+    func insertPasteboard(pasteboard: Pasteboard) {
+        delete(id: pasteboard.id)
+        do {
+            let object = PasteboardEntity(pasteboard: pasteboard)
+            let realm = try! Realm()
+            try realm.write {
+                realm.add(object)
+            }
+        } catch _ as NSError {}
+    }
+
+    func deletePasteboard(pasteboard: Pasteboard) {
+        delete(id: pasteboard.id)
+    }
+    
+    private func loadAllResults() -> Results<PasteboardEntity> {
+        return try! Realm().objects(PasteboardEntity.self)
+    }
+    
+    private func loadResults(type: GenreType) -> Results<PasteboardEntity> {
+        let predicate = NSPredicate(format: "type = %d", type.rawValue)
+        return loadAllResults().filter(predicate).sorted(byKeyPath: "createdAt", ascending: false)
+    }
+    
+    private func delete(id: String) {
+        let realm = try! Realm()
+        let predicate = NSPredicate(format: "id = %@", id)
+        do {
+            try realm.write {
+                let deleteObjects = realm.objects(PasteboardEntity.self).filter(predicate)
+                realm.delete(deleteObjects)
+            }
+        } catch _ as NSError {}
     }
 }
