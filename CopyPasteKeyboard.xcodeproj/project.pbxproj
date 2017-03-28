@@ -19,6 +19,7 @@
 		DB42A7031E87F20F00BF32D8 /* PasteboardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB42A7021E87F20F00BF32D8 /* PasteboardService.swift */; };
 		DB42A7051E87F9FA00BF32D8 /* PasteboardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB42A7041E87F9F900BF32D8 /* PasteboardModel.swift */; };
 		DB42A7071E87FB2500BF32D8 /* Pasteboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB42A7061E87FB2500BF32D8 /* Pasteboard.swift */; };
+		DB4479211E8A98BC00C03171 /* Silent3sec.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DB4479201E8A98BC00C03171 /* Silent3sec.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		DB42A7021E87F20F00BF32D8 /* PasteboardService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasteboardService.swift; sourceTree = "<group>"; };
 		DB42A7041E87F9F900BF32D8 /* PasteboardModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasteboardModel.swift; sourceTree = "<group>"; };
 		DB42A7061E87FB2500BF32D8 /* Pasteboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pasteboard.swift; sourceTree = "<group>"; };
+		DB4479201E8A98BC00C03171 /* Silent3sec.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Silent3sec.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 		DB42A6CD1E87DBB400BF32D8 /* CopyPasteKeyboard */ = {
 			isa = PBXGroup;
 			children = (
+				DB4479201E8A98BC00C03171 /* Silent3sec.mp3 */,
 				DB42A6CE1E87DBB400BF32D8 /* AppDelegate.swift */,
 				DB42A6D01E87DBB400BF32D8 /* ViewController.swift */,
 				DB42A6D21E87DBB400BF32D8 /* Main.storyboard */,
@@ -221,6 +224,11 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = AVWWV46Y77;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					DB42A6DE1E87DBB400BF32D8 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -262,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB42A6D91E87DBB400BF32D8 /* LaunchScreen.storyboard in Resources */,
+				DB4479211E8A98BC00C03171 /* Silent3sec.mp3 in Resources */,
 				DB42A6D61E87DBB400BF32D8 /* Assets.xcassets in Resources */,
 				DB42A6D41E87DBB400BF32D8 /* Main.storyboard in Resources */,
 			);
@@ -569,6 +578,7 @@
 				DB42A6F51E87DBB400BF32D8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DB42A6F61E87DBB400BF32D8 /* Build configuration list for PBXNativeTarget "CopyPasteKeyboardTests" */ = {
 			isa = XCConfigurationList;
@@ -577,6 +587,7 @@
 				DB42A6F81E87DBB400BF32D8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DB42A6F91E87DBB400BF32D8 /* Build configuration list for PBXNativeTarget "CopyPasteKeyboardUITests" */ = {
 			isa = XCConfigurationList;
@@ -585,6 +596,7 @@
 				DB42A6FB1E87DBB400BF32D8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

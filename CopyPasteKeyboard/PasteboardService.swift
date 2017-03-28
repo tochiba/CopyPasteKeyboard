@@ -19,7 +19,7 @@ final class PasteboardService {
     }
     
     // TODO: ハンドリング
-    dynamic private func updatePasteboard() {
+    @objc func updatePasteboard() {
         print(UIPasteboard.general.strings ?? "")
     }
 }

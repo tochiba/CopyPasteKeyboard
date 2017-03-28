@@ -7,16 +7,31 @@
 //
 
 import UIKit
+import AVFoundation
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    // TODO: バックグラウンド永続化
     let pasteboardService = PasteboardService()
-
+    let audioSession = AVAudioSession.sharedInstance()
+    fileprivate var audioPlayer: AVAudioPlayer?
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        do {
+            try audioSession.setCategory(AVAudioSessionCategoryPlayback)
+            try audioSession.setActive(true)
+            if let url = Bundle.main.url(forResource: "Silent3sec", withExtension: "mp3") {
+                audioPlayer = try AVAudioPlayer(contentsOf: url)
+                audioPlayer?.numberOfLoops = 1
+                audioPlayer?.prepareToPlay()
+                audioPlayer?.play()
+                audioPlayer?.delegate = self
+            }
+        } catch {
+            print("error")
+        }
         return true
     }
 
@@ -43,5 +58,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
+}
+
+extension AppDelegate: AVAudioPlayerDelegate {
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        pasteboardService.updatePasteboard()
+        audioPlayer?.prepareToPlay()
+        audioPlayer?.play()
+    }
+    func audioPlayerDecodeErrorDidOccur(_ player: AVAudioPlayer, error: Error?) {}
 }
 
